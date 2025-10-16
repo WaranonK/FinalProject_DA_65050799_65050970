@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+
+{% block title %}แบบประเมิน{% endblock %}
+{% block content %}
+    <h1>แบบประเมินสุขภาพจิตสำหรับนักศึกษา</h1>
+    <p>โปรดเลือกคำตอบที่ตรงกับความรู้สึกของคุณที่สุด</p>
+
+    <form action="/predict" method="post">
+
+        <h2>ส่วนที่ 1: ความเครียด</h2>
+        <p>ในช่วง 1 เดือนที่ผ่านมา คุณรู้สึกหรือคิดเช่นนี้บ่อยแค่ไหน?</p>
+        
+        <p>1. รู้สึกหัวเสียกับเรื่องที่เกิดขึ้นอย่างไม่คาดฝันในเรื่องการเรียน?</p>
+        <input type="radio" name="pss1" value="0" required> ไม่เลย 
+        <input type="radio" name="pss1" value="1"> น้อยมาก 
+        <input type="radio" name="pss1" value="2"> บางครั้ง 
+        <input type="radio" name="pss1" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss1" value="4"> บ่อยมาก
+        <hr>
+        
+        <p>2. รู้สึกว่าไม่สามารถควบคุมสิ่งสำคัญในเรื่องการเรียนได้?</p>
+        <input type="radio" name="pss2" value="0" required> ไม่เลย 
+        <input type="radio" name="pss2" value="1"> น้อยมาก 
+        <input type="radio" name="pss2" value="2"> บางครั้ง 
+        <input type="radio" name="pss2" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss2" value="4"> บ่อยมาก
+        <hr>
+        
+        <p>3. รู้สึกกระวนกระวายและเครียดเนื่องจากแรงกดดันด้านการเรียน?</p>
+        <input type="radio" name="pss3" value="0" required> ไม่เลย 
+        <input type="radio" name="pss3" value="1"> น้อยมาก 
+        <input type="radio" name="pss3" value="2"> บางครั้ง 
+        <input type="radio" name="pss3" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss3" value="4"> บ่อยมาก
+        <hr>
+        
+        <p>4. รู้สึกว่าไม่สามารถรับมือกับกิจกรรมบังคับทางการศึกษาทั้งหมดได้ (เช่น การบ้าน, ควิซ, สอบ)?</p>
+        <input type="radio" name="pss4" value="0" required> ไม่เลย 
+        <input type="radio" name="pss4" value="1"> น้อยมาก 
+        <input type="radio" name="pss4" value="2"> บางครั้ง 
+        <input type="radio" name="pss4" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss4" value="4"> บ่อยมาก
+        <hr>
+        
+        <p>5. รู้สึกมั่นใจในความสามารถที่จะจัดการกับปัญหาด้านการเรียน/มหาวิทยาลัย?</p>
+        <input type="radio" name="pss5" value="0" required> ไม่เลย 
+        <input type="radio" name="pss5" value="1"> น้อยมาก 
+        <input type="radio" name="pss5" value="2"> บางครั้ง 
+        <input type="radio" name="pss5" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss5" value="4"> บ่อยมาก
+        <hr>
+        
+        <p>6. รู้สึกว่าเรื่องต่างๆ ในชีวิตการเรียนกำลังดำเนินไปในทางที่คุณต้องการ?</p>
+        <input type="radio" name="pss6" value="0" required> ไม่เลย 
+        <input type="radio" name="pss6" value="1"> น้อยมาก 
+        <input type="radio" name="pss6" value="2"> บางครั้ง 
+        <input type="radio" name="pss6" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss6" value="4"> บ่อยมาก
+        <hr>
+        
+        <p>7. สามารถควบคุมความหงุดหงิดในเรื่องการเรียน/มหาวิทยาลัยได้?</p>
+        <input type="radio" name="pss7" value="0" required> ไม่เลย 
+        <input type="radio" name="pss7" value="1"> น้อยมาก 
+        <input type="radio" name="pss7" value="2"> บางครั้ง 
+        <input type="radio" name="pss7" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss7" value="4"> บ่อยมาก
+        <hr>
+        
+        <p>8. รู้สึกว่าผลการเรียนของคุณอยู่ในระดับที่ดีที่สุด?</p>
+        <input type="radio" name="pss8" value="0" required> ไม่เลย 
+        <input type="radio" name="pss8" value="1"> น้อยมาก 
+        <input type="radio" name="pss8" value="2"> บางครั้ง 
+        <input type="radio" name="pss8" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss8" value="4"> บ่อยมาก
+        <hr>
+        
+        <p>9. รู้สึกโกรธเนื่องจากผลการเรียนที่ไม่ดีหรือเกรดที่ต่ำเกินกว่าที่คุณจะควบคุมได้?</p>
+        <input type="radio" name="pss9" value="0" required> ไม่เลย 
+        <input type="radio" name="pss9" value="1"> น้อยมาก 
+        <input type="radio" name="pss9" value="2"> บางครั้ง 
+        <input type="radio" name="pss9" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss9" value="4"> บ่อยมาก
+        <hr>
+        
+        <p>10. รู้สึกว่าความยากลำบากด้านการเรียนสุมเข้ามาจนคุณไม่สามารถเอาชนะได้?</p>
+        <input type="radio" name="pss10" value="0" required> ไม่เลย 
+        <input type="radio" name="pss10" value="1"> น้อยมาก 
+        <input type="radio" name="pss10" value="2"> บางครั้ง 
+        <input type="radio" name="pss10" value="3"> ค่อนข้างบ่อย 
+        <input type="radio" name="pss10" value="4"> บ่อยมาก
+        <hr>
+
+        <h2>ส่วนที่ 2: ความวิตกกังวล</h2>
+        <p>ในช่วง 2 สัปดาห์ที่ผ่านมา อาการเหล่านี้รบกวนคุณบ่อยแค่ไหน?</p>
+        
+        <p>1. รู้สึกประหม่า, วิตกกังวล หรือเครียดเนื่องจากแรงกดดันด้านการเรียน?</p>
+        <input type="radio" name="gad1" value="0" required> ไม่เลย 
+        <input type="radio" name="gad1" value="1"> เป็นบางวัน 
+        <input type="radio" name="gad1" value="2"> เป็นบ่อย 
+        <input type="radio" name="gad1" value="3"> เป็นแทบทุกวัน
+        <hr>
+        
+        <p>2. ไม่สามารถหยุดกังวลเกี่ยวกับเรื่องการเรียนได้?</p>
+        <input type="radio" name="gad2" value="0" required> ไม่เลย 
+        <input type="radio" name="gad2" value="1"> เป็นบางวัน 
+        <input type="radio" name="gad2" value="2"> เป็นบ่อย 
+        <input type="radio" name="gad2" value="3"> เป็นแทบทุกวัน
+        <hr>
+        
+        <p>3. มีปัญหาในการผ่อนคลายเนื่องจากแรงกดดันด้านการเรียน?</p>
+        <input type="radio" name="gad3" value="0" required> ไม่เลย 
+        <input type="radio" name="gad3" value="1"> เป็นบางวัน 
+        <input type="radio" name="gad3" value="2"> เป็นบ่อย 
+        <input type="radio" name="gad3" value="3"> เป็นแทบทุกวัน
+        <hr>
+        
+        <p>4. รู้สึกหงุดหงิดหรือฉุนเฉียวง่ายเพราะแรงกดดันด้านการเรียน?</p>
+        <input type="radio" name="gad4" value="0" required> ไม่เลย 
+        <input type="radio" name="gad4" value="1"> เป็นบางวัน 
+        <input type="radio" name="gad4" value="2"> เป็นบ่อย 
+        <input type="radio" name="gad4" value="3"> เป็นแทบทุกวัน
+        <hr>
+        
+        <p>5. กังวลมากเกินไปเกี่ยวกับเรื่องการเรียน?</p>
+        <input type="radio" name="gad5" value="0" required> ไม่เลย 
+        <input type="radio" name="gad5" value="1"> เป็นบางวัน 
+        <input type="radio" name="gad5" value="2"> เป็นบ่อย 
+        <input type="radio" name="gad5" value="3"> เป็นแทบทุกวัน
+        <hr>
+        
+        <p>6. รู้สึกกระสับกระส่ายเนื่องจากแรงกดดันด้านการเรียนจนยากที่จะนั่งนิ่งๆ?</p>
+        <input type="radio" name="gad6" value="0" required> ไม่เลย 
+        <input type="radio" name="gad6" value="1"> เป็นบางวัน 
+        <input type="radio" name="gad6" value="2"> เป็นบ่อย 
+        <input type="radio" name="gad6" value="3"> เป็นแทบทุกวัน
+        <hr>
+        
+        <p>7. รู้สึกกลัวราวกับว่าจะมีเรื่องเลวร้ายเกิดขึ้น?</p>
+        <input type="radio" name="gad7" value="0" required> ไม่เลย 
+        <input type="radio" name="gad7" value="1"> เป็นบางวัน 
+        <input type="radio" name="gad7" value="2"> เป็นบ่อย 
+        <input type="radio" name="gad7" value="3"> เป็นแทบทุกวัน
+        <hr>
+
+        <h2>ส่วนที่ 3: ภาวะซึมเศร้า</h2>
+
+        <p>1. มีความสนใจหรือเพลิดเพลินในการทำสิ่งต่างๆ น้อยลง</p>
+        <input type="radio" name="phq1" value="0" required> ไม่เลย
+        <input type="radio" name="phq1" value="1"> เป็นบางวัน
+        <input type="radio" name="phq1" value="2"> เป็นบ่อย
+        <input type="radio" name="phq1" value="3"> เป็นแทบทุกวัน
+        <hr>
+    
+        <p>2. รู้สึกเบื่อหน่าย ซึมเศร้า หรือท้อแท้</p>
+        <input type="radio" name="phq2" value="0" required> ไม่เลย
+        <input type="radio" name="phq2" value="1"> เป็นบางวัน
+        <input type="radio" name="phq2" value="2"> เป็นบ่อย
+        <input type="radio" name="phq2" value="3"> เป็นแทบทุกวัน
+        <hr>
+    
+        <p>3. หลับยาก หรือหลับๆ ตื่นๆ หรือหลับมากไป</p>
+        <input type="radio" name="phq3" value="0" required> ไม่เลย
+        <input type="radio" name="phq3" value="1"> เป็นบางวัน
+        <input type="radio" name="phq3" value="2"> เป็นบ่อย
+        <input type="radio" name="phq3" value="3"> เป็นแทบทุกวัน
+        <hr>
+    
+        <p>4. รู้สึกเหนื่อยง่าย หรือไม่ค่อยมีแรง</p>
+        <input type="radio" name="phq4" value="0" required> ไม่เลย
+        <input type="radio" name="phq4" value="1"> เป็นบางวัน
+        <input type="radio" name="phq4" value="2"> เป็นบ่อย
+        <input type="radio" name="phq4" value="3"> เป็นแทบทุกวัน
+        <hr>
+    
+        <p>5. เบื่ออาหาร หรือกินมากเกินไป</p>
+        <input type="radio" name="phq5" value="0" required> ไม่เลย
+        <input type="radio" name="phq5" value="1"> เป็นบางวัน
+        <input type="radio" name="phq5" value="2"> เป็นบ่อย
+        <input type="radio" name="phq5" value="3"> เป็นแทบทุกวัน
+        <hr>
+    
+        <p>6. รู้สึกไม่ดีกับตัวเอง คิดว่าตัวเองล้มเหลว หรือทำให้ครอบครัวผิดหวัง</p>
+        <input type="radio" name="phq6" value="0" required> ไม่เลย
+        <input type="radio" name="phq6" value="1"> เป็นบางวัน
+        <input type="radio" name="phq6" value="2"> เป็นบ่อย
+        <input type="radio" name="phq6" value="3"> เป็นแทบทุกวัน
+        <hr>
+    
+        <p>7. มีสมาธิจดจ่อได้ไม่ดีเวลาทำอะไร เช่น ดูโทรทัศน์ ฟังวิทยุ หรือทำงานที่ต้องใช้ความตั้งใจ</p>
+        <input type="radio" name="phq7" value="0" required> ไม่เลย
+        <input type="radio" name="phq7" value="1"> เป็นบางวัน
+        <input type="radio" name="phq7" value="2"> เป็นบ่อย
+        <input type="radio" name="phq7" value="3"> เป็นแทบทุกวัน
+        <hr>
+    
+        <p>8. พูดช้า ทำอะไรช้าลงจนคนอื่นสังเกตได้ หรือกระสับกระส่าย ไม่สามารถอยู่นิ่งได้เหมือนเคย</p>
+        <input type="radio" name="phq8" value="0" required> ไม่เลย
+        <input type="radio" name="phq8" value="1"> เป็นบางวัน
+        <input type="radio" name="phq8" value="2"> เป็นบ่อย
+        <input type="radio" name="phq8" value="3"> เป็นแทบทุกวัน
+        <hr>
+    
+        <p>9. เคยคิดทำร้ายตนเอง หรือคิดว่าถ้าตายไปคงจะดี</p>
+        <input type="radio" name="phq9" value="0" required> ไม่เลย
+        <input type="radio" name="phq9" value="1"> เป็นบางวัน
+        <input type="radio" name="phq9" value="2"> เป็นบ่อย
+        <input type="radio" name="phq9" value="3"> เป็นแทบทุกวัน
+        <br><br>
+    
+        <button type="submit">ประเมินผล</button>
+    </form>
+{% endblock %}

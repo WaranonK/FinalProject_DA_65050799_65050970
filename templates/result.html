@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}ผลการประเมิน{% endblock %}
+    
+{% block content %}
+    <h1>ผลการประเมินสุขภาพจิตของคุณ</h1>
+
+    <div class="result-card">
+        <h2>ด้านความเครียด</h2>
+        <p>คะแนนรวม: {{ stress_score }}</p>
+        <p>ระดับ: {{ stress_label }}</p>
+    </div>
+
+    <div class="result-card">
+        <h2>ด้านความวิตกกังวล</h2>
+        <p>คะแนนรวม: {{ anxiety_score }}</p>
+        <p>ระดับ: {{ anxiety_label }}</p>
+    </div>
+
+    <div class="result-card">
+        <h2>ด้านภาวะซึมเศร้า</h2>
+        <p>คะแนนรวม: {{ depression_score }}</p>
+        <p>ระดับ: {{ depression_label }}</p>
+    </div>
+
+    <br>
+    <a href="/">กลับไปทำแบบประเมินอีกครั้ง</a>
+{% endblock %}

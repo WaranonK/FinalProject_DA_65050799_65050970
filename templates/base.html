@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - Depression App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">แบบประเมิน</a> |
+        <a href="{{ url_for('predictor') }}">ทำนายแนวโน้ม</a> |
+        <a href="{{ url_for('dashboard') }}">แดชบอร์ดสรุปผล</a> |
+        <a href="{{ url_for('information') }}">ข้อมูลน่ารู้</a> |
+        <a href="{{ url_for('resources') }}">แหล่งช่วยเหลือ</a>
+    </nav>
+    <hr>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

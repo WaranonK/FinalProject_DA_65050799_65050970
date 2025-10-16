@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}ผลการทำนาย{% endblock %}
+
+{% block content %}
+    <h1>ผลการทำนายแนวโน้ม</h1>
+    <p>จากข้อมูลโปรไฟล์ของคุณ ระบบคาดการณ์ว่าคุณอาจมีแนวโน้มคะแนนสุขภาพจิตดังนี้:</p>
+    
+    <div class="result-card">
+        <h2>ด้านความเครียด</h2>
+        <p>คะแนนที่ทำนายได้: {{ stress_score }}</p>
+        <p>ระดับ: {{ stress_label }}</p>
+    </div>
+
+    <div class="result-card">
+        <h2>ด้านความวิตกกังวล</h2>
+        <p>คะแนนที่ทำนายได้: {{ anxiety_score }}</p>
+        <p>ระดับ: {{ anxiety_label }}</p>
+    </div>
+
+    <div class="result-card">
+        <h2>ด้านภาวะซึมเศร้า</h2>
+        <p>คะแนนที่ทำนายได้: {{ depression_score }}</p>
+        <p>ระดับ: {{ depression_label }}</p>
+    </div>
+    
+    <p><strong>ข้อควรจำ:</strong> ผลลัพธ์นี้เป็นเพียงการคาดการณ์จากแบบจำลองทางสถิติเท่านั้น ไม่ใช่การวินิจฉัยทางการแพทย์</p>
+    <br>
+    <a href="{{ url_for('predictor') }}">ลองทำนายอีกครั้ง</a>
+{% endblock %}
